@@ -1,0 +1,20 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  background-color: #2ECCFA;
+}
+
+.button {
+  margin-top: 1em;
+}
+
+.column {
+  height: 100%;  
+}
+
+.text {
+  color: white;
+}

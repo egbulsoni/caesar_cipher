@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <title>Caesar Cipher</title>
+    <link rel="icon" href="images/favicon.png" />
+  </head>
+
+  <body>
+    <div class="column is-fluid is-half is-offset-one-quarter">      
+      <h1 class="title text">Welcome to the caesar cipher converter!</h1>
+      <form for="cipher" action="/" method="post">
+        <!-- phrase -->
+        <label class="label text" for="words">Type a phrase</label>
+        <textarea class="textarea is-primary is-focused" placeholder="secret message" name="msg"></textarea>
+        <!-- number to rotate -->
+        <label class="label text" for="words">Letter Flips:</label>
+        <input class="column is-one-quarter input is-primary" type="number" value="0" name="rot">
+        <!-- submit -->
+        <button type="submit" onclick="cifrar(msg, rot)" class="button is-success is-rounded">Cipher!</button>
+      </form>
+      <h1 class="subtitle is-3 text"><%= caesar_cipher(@msg,@rot) unless @msg.nil?%></h1>
+    </div>
+  </body>
+  <script type="text/javascript" src="script.js"></script>
+</html>
