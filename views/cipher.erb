@@ -13,17 +13,17 @@
   <body>
     <div class="column is-fluid is-half is-offset-one-quarter">      
       <h1 class="title text">Welcome to the caesar cipher converter!</h1>
-      <form for="cipher" action="/" method="post">
         <!-- phrase -->
         <label class="label text" for="words">Type a phrase</label>
-        <textarea class="textarea is-primary is-focused" placeholder="secret message" name="msg"></textarea>
+        <textarea class="textarea is-primary is-focused" placeholder="secret message" id="msg"></textarea>
         <!-- number to rotate -->
         <label class="label text" for="words">Letter Flips:</label>
-        <input class="column is-one-quarter input is-primary" type="number" value="0" name="rot">
+        <input class="column is-one-quarter input is-primary" type="number" value="0" id="rot">
         <!-- submit -->
-        <button type="submit" onclick="cifrar(msg, rot)" class="button is-success is-rounded">Cipher!</button>
-      </form>
-      <h1 class="subtitle is-3 text"><%= caesar_cipher(@msg,@rot) unless @msg.nil?%></h1>
+        <button onclick="cifrar()" class="button is-success is-rounded">Cipher!</button>
+      <h1 id="encrypted" class="subtitle is-3 text">
+      <%# caesar_cipher(@msg,@rot) unless @msg.nil?%>
+      </h1>
     </div>
   </body>
   <script type="text/javascript" src="script.js"></script>

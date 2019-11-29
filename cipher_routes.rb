@@ -34,7 +34,6 @@ get '/' do
 end
 
 post '/' do
-  @msg = params['msg']
-  @rot = params['rot'].to_i
-  erb :cipher
+  push = JSON.parse(request.body.read)
+  "#{caesar_cipher(push['msg'], push['rot'].to_i)}"
 end

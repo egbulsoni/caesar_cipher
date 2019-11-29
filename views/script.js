@@ -1,6 +1,7 @@
-function cifrar(msg, rot){
+function cifrar(){
 
-  const cipher = { msg: msg, rot: rot };
+  const cipher = { msg: document.getElementById('msg').value, 
+  rot: document.getElementById('rot').value };
   const options = {
     method: 'POST',
     body: JSON.stringify(cipher),
@@ -9,5 +10,10 @@ function cifrar(msg, rot){
     }
   }
 
-  fetch('/', options).then(res => res.json()).then(res => console.log(res));
+  fetch('/', options).then(res => res)
+  .then(res => 
+    res.text().then(text => 
+      document.getElementById('encrypted').innerHTML = text))
+
+
 }
